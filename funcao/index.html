@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>função</title>
+</head>
+<body>
+    <h2>função</h2>
+
+    <script>
+        //função bem nomeada e reutilizável
+        function calcularDesconto(preco, desconto){
+            return preco - (preco * desconto);
+        }
+
+        //uso
+        let precofinal = calcularDesconto(100, 0.2);
+        console.log(precofinal);
+//novo uso
+let novoprecofinal = calcularDesconto(100,0.15);
+console.log(novoprecofinal);
+
+function dizerola(){
+    console.log("olá!");
+
+}
+dizerola();
+
+    </script>
+
+</body>
+</html>
