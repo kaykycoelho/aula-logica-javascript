@@ -7,7 +7,7 @@ const store = db.createObjectStore("clientes", {keypath: "id"});
 store.createindex("nome", "nome", {unique: false});
 }
 
-request.onsuccess = funtion(event) {
+request.onsuccess = funtion(event) 
     const db = event.Target.result;
     const transaction = db.transaction("cliente", "readwrite");
     const store = transaction.objectstore("clientes");
@@ -20,7 +20,7 @@ const index = store.index("nome");
 const nomeindex = index.get("Maria Eduarda");
 
 nomeindex.onsuccess = function(event) {
-    
+     console.log(nomeindex.result);
 }
-    console.log(nomeindex.result);
 }
+
