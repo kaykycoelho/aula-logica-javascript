@@ -1,26 +1,27 @@
-//Abrindo um banco de dados IndexedDB
-const request = indexedDB.open("clinteDB", 1);
-
-request.onupgradeneeded = funtion(event) {
-const db = event.Target.result;
-const store = db.createObjectStore("clientes", {keypath: "id"});
-store.createindex("nome", "nome", {unique: false});
+// Abrindo um banco de dados IndexdDB
+ 
+const request = indexedDB.open("clienteDB", 1);
+ 
+request.onupgradeneeded = function(event){
+    const db = event.target.result;
+    const store = db.createObjectStore("clientes" , {keyPath:"id"});
+    store.createIndex("nome", "nome", {unique:false});
 }
-
-request.onsuccess = funtion(event) 
-    const db = event.Target.result;
-    const transaction = db.transaction("cliente", "readwrite");
-    const store = transaction.objectstore("clientes");
-
-//adicionando um novo cliente
+ 
+request.onsuccess = function(event){
+    const db = event.target.result;
+    const transaction = db.transaction("clientes", "readwrite");
+    const store = transaction.createObjectStore("clientes");
+ 
+ 
+// Adicionando um novo cliente
 store.add({ id: 1, nome: "Maria Eduarda", email: "maria@email.com"});
-
-//lendo um clinte pelo nome
+ 
+// Lendo um cliente pelo nome
 const index = store.index("nome");
-const nomeindex = index.get("Maria Eduarda");
-
-nomeindex.onsuccess = function(event) {
-     console.log(nomeindex.result);
+const nomeIndex = index.g("Maria Eduarda");
+ 
+nomeIndex.onsuccess = function(){
+    console.log(nomeIndex.result);
 }
 }
-
