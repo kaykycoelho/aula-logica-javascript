@@ -80,7 +80,7 @@ font-size: 16px;
             }
 
             const celsius = (fahrenheit - 32) * 5 / 9;
-            resultado.textContent = `${fahrenheit}°F equivalem a ${celsius.toFixed(2)}°c.`;
+            resultado.textContent = `${fahrenheit}°F equivalem a ${celsius.toLocaleString('pt-br',{ minimumFractionDigits: 2, maximumSignificantDigits: 2})}°c.`;
         }
     </script>
 </body>
