@@ -30,7 +30,7 @@ class carro {
     }
 
     //metodo
-    exibirinfo() {
+   exibirinfo() {
          return `carro: ${this.marca} ${this.modelo}`;
     
     }
